@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BESTI MINI | DCT</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:#000;
+    color:#00ff66;
+    font-family:'Share Tech Mono',monospace;
+    overflow-x:hidden;
+}
+
+/* CRT SCANLINES */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:99;
+    background:repeating-linear-gradient(
+        0deg,
+        rgba(0,255,80,.035) 0px,
+        rgba(0,255,80,.035) 1px,
+        transparent 1px,
+        transparent 4px
+    );
+}
+
+/* BACKGROUND GLOW */
+body::after{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    background:#00ff66;
+    filter:blur(180px);
+    opacity:.08;
+    top:30%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+}
+
+.container{
+    width:100%;
+    max-width:700px;
+    margin:auto;
+    padding:45px 20px;
+    text-align:center;
+}
+
+/* HEADER */
+.logo{
+    font-size:clamp(30px,8vw,58px);
+    font-weight:bold;
+    letter-spacing:4px;
+    text-shadow:
+        3px 0 red,
+        -3px 0 cyan,
+        0 0 15px #00ff66;
+    animation:glitch 2s infinite;
+}
+
+.sub{
+    margin-top:8px;
+    font-size:20px;
+    letter-spacing:5px;
+    text-shadow:0 0 10px #00ff66;
+}
+
+.status{
+    margin-top:10px;
+    font-size:17px;
+}
+
+/* MAIN CARD */
+.card{
+    margin-top:90px;
+    padding:55px 25px 50px;
+    border:2px solid #00ff66;
+    border-radius:28px;
+    background:rgba(0,0,0,.85);
+    box-shadow:
+        0 0 10px #00ff66,
+        0 0 35px rgba(0,255,102,.7),
+        inset 0 0 35px rgba(0,255,102,.08);
+    position:relative;
+}
+
+.card::before{
+    content:"BESTI MINI";
+    position:absolute;
+    top:-13px;
+    left:50%;
+    transform:translateX(-50%);
+    background:#000;
+    padding:0 18px;
+    font-size:16px;
+    letter-spacing:3px;
+}
+
+/* TITLE */
+.card-title{
+    font-size:clamp(28px,7vw,45px);
+    font-weight:bold;
+    line-height:1.3;
+    text-shadow:
+        3px 0 red,
+        -3px 0 cyan,
+        0 0 15px #00ff66;
+}
+
+/* INFO */
+.info{
+    margin-top:25px;
+    text-align:left;
+    max-width:430px;
+    margin-left:auto;
+    margin-right:auto;
+    font-size:18px;
+    line-height:2;
+}
+
+.online{
+    color:#00ff66;
+    text-shadow:0 0 8px #00ff66;
+}
+
+/* BUTTON */
+.btn{
+    display:block;
+    width:85%;
+    max-width:420px;
+    margin:25px auto;
+    padding:18px 15px;
+    border:2px solid #00ff66;
+    border-radius:8px;
+    background:transparent;
+    color:#00ff66;
+    font-family:inherit;
+    font-size:18px;
+    cursor:pointer;
+    text-decoration:none;
+    transition:.3s;
+    box-shadow:0 0 8px rgba(0,255,102,.4);
+}
+
+.btn:hover{
+    background:#00ff66;
+    color:#000;
+    box-shadow:
+        0 0 10px #00ff66,
+        0 0 30px #00ff66;
+    transform:scale(1.03);
+}
+
+/* GENDER */
+.gender-title{
+    margin-top:30px;
+    font-size:20px;
+}
+
+.gender{
+    display:flex;
+    justify-content:center;
+    gap:35px;
+    margin-top:15px;
+    font-size:19px;
+}
+
+.gender label{
+    cursor:pointer;
+}
+
+.gender input{
+    width:20px;
+    height:20px;
+    accent-color:#00ff66;
+    vertical-align:middle;
+}
+
+/* FOOTER */
+.footer{
+    margin-top:40px;
+    font-size:14px;
+    opacity:.7;
+}
+
+.footer span{
+    text-shadow:0 0 8px #00ff66;
+}
+
+/* GLITCH */
+@keyframes glitch{
+    0%,90%,100%{
+        transform:none;
+    }
+    92%{
+        transform:translateX(3px);
+    }
+    94%{
+        transform:translateX(-3px);
+    }
+    96%{
+        transform:translateX(2px);
+    }
+}
+
+/* MOBILE */
+@media(max-width:500px){
+
+    .container{
+        padding:35px 15px;
+    }
+
+    .card{
+        margin-top:70px;
+        padding:45px 18px;
+    }
+
+    .info{
+        font-size:16px;
+    }
+
+    .btn{
+        width:95%;
+    }
+
+    .gender{
+        gap:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+    <div class="logo">BESTI MINI</div>
+    <div class="sub">DCT BOT</div>
+
+    <div class="status">
+        [ BESTI-MINI DCT ]
+    </div>
+
+    <!-- MAIN -->
+    <div class="card">
+
+        <div class="card-title">
+            ( BESTI-MINI )<br>
+            DCT
+        </div>
+
+        <div class="info">
+            &gt; SYSTEM STATUS:
+            <span class="online">ONLINE</span><br>
+
+            &gt; ACCESS LEVEL:
+            <span class="online">ROOT</span><br>
+
+            &gt; BOT VERSION:
+            <span class="online">V1</span>
+        </div>
+
+        <!-- PAIR BUTTON -->
+        <a class="btn"
+           href="https://besti-mini-main-site.vercel.app"
+           target="_blank">
+            &gt;&gt; INITIATE PAIRING
+        </a>
+
+        <!-- CHANNEL -->
+        <a class="btn"
+           href="https://bestie-mini-api-site.vercel.app/"
+           target="_blank">
+            &gt;&gt; FREE API SITE
+        </a>
+
+ 
+
+    <div class="footer">
+        POWERED BY <span>DCT TEAM</span>
+    </div>
+
+</div>
+
+<script>
+
+
+</script>
+
+</body>
+</html>
